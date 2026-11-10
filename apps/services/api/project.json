@@ -1,0 +1,26 @@
+{
+  "name": "api",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "targets": {
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/services/api",
+        "commands": [
+          "test -z \"$(gofmt -l .)\" || { gofmt -l .; exit 1; }",
+          "golangci-lint run"
+        ],
+        "parallel": false
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/services/api", "command": "go test -race ./..." }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/services/api", "command": "go build -o bin/api ." }
+    }
+  }
+}

@@ -15,7 +15,19 @@ This file is the map of the repository. Iter8 wrote it when the project was crea
 
 ## Commands
 
-Not written yet: the first build fills in how to install, run, test, lint and build.
+Install the workspace once from the root with `pnpm install` (this also covers web), and install [golangci-lint](https://golangci-lint.run) v2 separately for the api's lint.
+
+| | api (`apps/services/api`) | web (`apps/clients/web`) |
+| --- | --- | --- |
+| Install | `go mod download` in the api folder | `pnpm install` at the root |
+| Run | `go run .` in the api folder (needs `ALLOWED_ORIGINS`, see `.env.example`) | `pnpm exec nx dev web` |
+| Test | `pnpm exec nx test api` | `pnpm exec nx test web` |
+| Lint | `pnpm exec nx lint api` | `pnpm exec nx lint web` |
+| Build | `pnpm exec nx build api` | `pnpm exec nx build web` |
+
+Inside the api folder the same steps are `go test -race ./...`, `golangci-lint run` (plus `gofmt -l .`) and `go build -o bin/api .`. Inside the web folder they are `pnpm test`, `pnpm lint`, `pnpm typecheck` and `pnpm build`. web also has a `typecheck` target: `pnpm exec nx typecheck web`.
+
+`run_checks` for the whole repository: `pnpm exec nx run-many -t lint typecheck test build`.
 
 ## Docs
 
