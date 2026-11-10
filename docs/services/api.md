@@ -19,12 +19,16 @@ Answers `GET /healthz` with 200.
 
 ## Configuration
 
-Not written yet: the variables it reads.
+Read once at start-up from the environment; a `.env` file is loaded first when present. Listed in `.env.example`.
+
+- `PORT`: optional, default `8080`; must be a number from 1 to 65535.
+- `ALLOWED_ORIGINS`: required, comma-separated browser origins. The API exits at start-up naming it when it is missing or blank.
 
 ## Depends on
 
-Not written yet: other services and outside systems.
+None.
 
 ## Gaps
 
-Not written yet: what it does not do yet.
+- No weather endpoints yet.
+- `ALLOWED_ORIGINS` is parsed but no CORS handling uses it yet.

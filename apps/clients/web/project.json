@@ -1,0 +1,27 @@
+{
+  "name": "web",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "targets": {
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/clients/web", "command": "pnpm exec vite" }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/clients/web", "command": "pnpm exec eslint ." }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/clients/web", "command": "pnpm exec tsc --noEmit" }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/clients/web", "command": "pnpm exec vitest run" }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/clients/web", "command": "pnpm exec vite build" }
+    }
+  }
+}
