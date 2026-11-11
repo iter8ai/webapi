@@ -1,0 +1,6 @@
+.env
+node_modules
+dist
+.nx
+*.tsbuildinfo
+apps/services/api/bin

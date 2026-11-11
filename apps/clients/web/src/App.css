@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+.app h1 {
+  margin: 0;
+  padding: 1rem 2rem;
+  color: #fff;
+  background: #1d4ed8;
+}
