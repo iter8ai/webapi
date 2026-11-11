@@ -15,16 +15,19 @@ An Api that returns mocked weather data
 
 ## Interfaces
 
-Answers `GET /healthz` with 200.
+Answers `GET /healthz` with 200; other methods on it get 405, unknown paths 404.
 
 ## Configuration
 
-Not written yet: the variables it reads.
+Read once at start-up from the environment; a `.env` file is loaded first when present, and real environment variables win. The same set is in `.env.example`.
+
+- `PORT`: optional, default `8080`; must be a number from 1 to 65535.
+- `ALLOWED_ORIGINS`: required, a comma-separated list of website origins. Start-up fails with an error naming it when it is missing or blank.
 
 ## Depends on
 
-Not written yet: other services and outside systems.
+Nothing.
 
 ## Gaps
 
-Not written yet: what it does not do yet.
+No weather endpoints yet, and no CORS middleware: `ALLOWED_ORIGINS` is parsed but not yet enforced.

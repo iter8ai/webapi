@@ -1,0 +1,8 @@
+{
+  "name": "webapi",
+  "private": true,
+  "packageManager": "pnpm@12.16.1",
+  "devDependencies": {
+    "nx": "^24.0.6"
+  }
+}

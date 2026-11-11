@@ -1,0 +1,19 @@
+{
+  "name": "api",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "targets": {
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": { "command": "golangci-lint run", "cwd": "apps/services/api" }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": { "command": "go test -race ./...", "cwd": "apps/services/api" }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": { "command": "go build ./...", "cwd": "apps/services/api" }
+    }
+  }
+}

@@ -15,7 +15,24 @@ This file is the map of the repository. Iter8 wrote it when the project was crea
 
 ## Commands
 
-Not written yet: the first build fills in how to install, run, test, lint and build.
+Install once at the root: `pnpm install`, then `go mod download` in `apps/services/api`. Run each command from the service's folder.
+
+api (`apps/services/api`):
+
+- Run: `ALLOWED_ORIGINS=http://localhost:5173 go run .` (or copy `.env.example` to `.env`)
+- Test: `go test -race ./...`
+- Lint: `golangci-lint run`
+- Build: `go build ./...`
+
+web (`apps/clients/web`):
+
+- Run: `pnpm --filter web dev`
+- Test: `pnpm exec vitest run`
+- Lint: `pnpm exec eslint .`
+- Typecheck: `pnpm exec tsc --noEmit`
+- Build: `pnpm exec vite build`
+
+Whole repository, from the root: `pnpm exec nx run-many -t lint typecheck test build`.
 
 ## Docs
 
