@@ -15,7 +15,23 @@ This file is the map of the repository. Iter8 wrote it when the project was crea
 
 ## Commands
 
-Not written yet: the first build fills in how to install, run, test, lint and build.
+Install the workspace once from the root: `pnpm install`. `run_checks` is `pnpm exec nx run-many -t lint typecheck test build`.
+
+api (needs Go and golangci-lint v2):
+
+- Install: `cd apps/services/api && go mod download`
+- Run: `cd apps/services/api && cp .env.example .env && go run .`
+- Test: `pnpm exec nx run api:test`
+- Lint: `pnpm exec nx run api:lint`
+- Build: `pnpm exec nx run api:build`
+
+web:
+
+- Install: `pnpm install` at the root
+- Run: `pnpm --filter web dev`
+- Test: `pnpm exec nx run web:test`
+- Lint: `pnpm exec nx run web:lint` (and `pnpm exec nx run web:typecheck`)
+- Build: `pnpm exec nx run web:build`
 
 ## Docs
 

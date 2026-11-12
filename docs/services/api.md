@@ -19,12 +19,18 @@ Answers `GET /healthz` with 200.
 
 ## Configuration
 
-Not written yet: the variables it reads.
+| Variable | Required | Default | Meaning |
+| --- | --- | --- | --- |
+| `PORT` | no | `8080` | Port it listens on; a number from 1 to 65535. |
+| `ALLOWED_ORIGINS` | yes | none | Comma-separated website origins. |
+
+`.env` is loaded when present; `.env.example` lists the same set. Start-up fails with an error naming a missing or invalid variable.
 
 ## Depends on
 
-Not written yet: other services and outside systems.
+None.
 
 ## Gaps
 
-Not written yet: what it does not do yet.
+- No weather endpoints yet; `/healthz` is its only route.
+- `ALLOWED_ORIGINS` is parsed but no CORS middleware uses it yet.
