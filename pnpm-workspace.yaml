@@ -1,0 +1,8 @@
+packages:
+  - apps/clients/*
+  - apps/services/*
+  - apps/tools/*
+  - libs/js/*
+
+allowBuilds:
+  nx: true

@@ -9,22 +9,22 @@ A Vite single-page site with React; it has no runtime config. Where the reposito
 | Type | Website |
 | Language | TypeScript |
 | Framework | None stated |
-| Packages | `vite`, `react` |
+| Packages | `vite`, `react`, `react-dom`, `typescript`, `@types/react`, `@types/react-dom`, `vitest`, `eslint`, `@eslint/js`, `typescript-eslint` |
 | Path | `apps/clients/web` |
 | Port | 5173 |
 
 ## Interfaces
 
-Not written yet: the routes, commands or exports it offers.
+A single page at `/`. Scripts: `dev`, `build`, `lint`, `typecheck`, `test`.
 
 ## Configuration
 
-Not written yet: the variables it reads.
+None. The dev server proxies `/api` to `http://localhost:8080`.
 
 ## Depends on
 
-Not written yet: other services and outside systems.
+The api, through the dev proxy only.
 
 ## Gaps
 
-Not written yet: what it does not do yet.
+No weather display yet; the page is a heading only.
